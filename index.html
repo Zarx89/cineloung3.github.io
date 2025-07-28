@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <title>CineLounge - Aluguel e Compra de Filmes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; }
+    body { background-color: #121212; color: #fff; }
+    header { background-color: #1f1f1f; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
+    header h1 { color: #e50914; font-size: 28px; }
+    .search-bar input { padding: 10px; border-radius: 4px; border: none; width: 250px; }
+    .banner { background: url('https://images.pexels.com/photos/799137/pexels-photo-799137.jpeg') center/cover no-repeat; height: 400px; display: flex; align-items: center; justify-content: center; text-align: center; }
+    .banner h2 { background-color: rgba(0, 0, 0, 0.6); padding: 20px; font-size: 36px; color: #fff; }
+    .section { padding: 30px 20px; }
+    .section h2 { margin-bottom: 20px; color: #f4f4f4; }
+    .filmes { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+    .filme { background-color: #1f1f1f; padding: 10px; width: 180px; border-radius: 8px; text-align: center; }
+    .filme img { width: 100%; height: auto; border-radius: 6px; cursor: pointer; }
+    .filme h3 { margin: 10px 0 5px; font-size: 16px; }
+    .preco { margin: 8px 0; font-size: 14px; color: #bbb; }
+    .botoes button { background-color: #e50914; border: none; color: #fff; padding: 8px; margin: 5px 0; border-radius: 4px; cursor: pointer; width: 100%; }
+    footer { background-color: #1f1f1f; text-align: center; padding: 20px; font-size: 14px; color: #aaa; margin-top: 40px; }
+    .detalhes { display: none; max-width: 1000px; margin: 40px auto; padding: 0 20px; display: flex; flex-wrap: wrap; gap: 30px; }
+    .poster { flex: 1 1 300px; }
+    .poster img { width: 100%; border-radius: 8px; }
+    .info { flex: 2 1 600px; }
+    .info h2 { font-size: 28px; margin-bottom: 10px; }
+    .info p { margin-bottom: 10px; }
+    .precos { margin: 20px 0; }
+    .precos span { display: block; margin-bottom: 5px; font-size: 18px; }
+    .info .botoes button { font-size: 16px; margin-right: 10px; padding: 10px 20px; width: auto; }
+    iframe { margin-top: 20px; width: 100%; height: 315px; border: none; border-radius: 8px; }
+    .voltar { margin: 20px 0; display: inline-block; background-color: #444; padding: 8px 16px; border-radius: 6px; color: white; text-decoration: none; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CineLounge</h1>
+    <div class="search-bar">
+      <input type="text" placeholder="Pesquisar filmes...">
+    </div>
+  </header>
+  <div id="pagina-inicial">
+    <div class="banner"><h2>Alugue ou Compre os Melhores Filmes</h2></div>
+    <section class="section">
+      <h2>🎬 Lançamentos</h2>
+      <div class="filmes">
+        <div class="filme"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/377239204336663.66a77fa3e72e9.png" onclick="mostrarDetalhes(1)"><h3>Deadpool & Wolverine</h3><p class="preco">Alugar: 5,99 € | Comprar: 14,95 €</p><div class="botoes"><button onclick="mostrarDetalhes(1)">Alugar</button><button onclick="mostrarDetalhes(1)">Comprar</button></div></div>
+        <div class="filme"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/9bb34af8-c1f8-45b6-a131-92a50188098b/diofzzx-2146b134-c5b0-4dc5-9474-817fd7926f96.png/v1/fill/w_786%2Ch_1017%2Cq_70%2Cstrp/lilo_and_stitch_by_blegharts_diofzzx-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTY1NSIsInBhdGgiOiJcL2ZcLzliYjM0YWY4LWMxZjgtNDViNi1hMTMxLTkyYTUwMTg4MDk4YlwvZGlvZnp6eC0yMTQ2YjEzNC1jNWIwLTRkYzUtOTQ3NC04MTdmZDc5MjZmOTYucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.AP0sD_xL6KDCTA7WTTaR3zZOisPiyIGa0_Ge_mrbtTE" onclick="mostrarDetalhes(2)"><h3>Lilo e Stitch</h3><p class="preco">Alugar: 3,49 € | Comprar: 10,99 €</p><div class="botoes"><button onclick="mostrarDetalhes(2)">Alugar</button><button onclick="mostrarDetalhes(2)">Comprar</button></div></div>
+        <div class="filme"><img src="https://i.etsystatic.com/18242346/r/il/87bc12/2184703308/il_570xN.2184703308_jpnu.jpg" onclick="mostrarDetalhes(3)"><h3>Parasitas</h3><p class="preco">Alugar: 8,49 € | Comprar: 14,99 €</p><div class="botoes"><button onclick="mostrarDetalhes(3)">Alugar</button><button onclick="mostrarDetalhes(3)">Comprar</button></div></div>
+        <div class="filme"><img src="https://cinemacao.com/wp-content/uploads/2014/07/transformers-age-of-extinction-30825-1920x1080-1.jpg" onclick="mostrarDetalhes(4)"><h3>Transformers: A Era da Extinção</h3><p class="preco">Alugar: 7,49 € | Comprar: 14,99 €</p><div class="botoes"><button onclick="mostrarDetalhes(4)">Alugar</button><button onclick="mostrarDetalhes(4)">Comprar</button></div></div>
+        <div class="filme"><img src="https://upload.wikimedia.org/wikipedia/pt/1/1a/Mufasa_P%C3%B4ster.webp" onclick="mostrarDetalhes(5)"><h3>Mufasa: O Rei Leão</h3><p class="preco">Alugar: 8,29 € | Comprar: 19,49 €</p><div class="botoes"><button onclick="mostrarDetalhes(5)">Alugar</button><button onclick="mostrarDetalhes(5)">Comprar</button></div></div>
+      </div>
+    </section>
+  </div>
+  <!-- Área de Detalhes será inserida aqui -->
+  <!-- Inserida por script para organização -->
+  <div id="pagina-detalhes"></div>
+  <footer>© 2025 CineLounge - Todos os direitos reservados.</footer>
+  <script>
+    const detalhes = [
+      {
+        titulo: "Deadpool & Wolverine",
+        ano: "2024",
+        genero: "Ação, Comédia",
+        duracao: "2h 08min",
+        classificacao: "M/16",
+        sinopse: "Os anti-heróis mais icônicos da Marvel se unem para enfrentar uma nova ameaça multiversal, com muito humor e violência criativa.",
+        precoAluguel: "5,99 €",
+        precoCompra: "14,95 €",
+        imagem: "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/377239204336663.66a77fa3e72e9.png",
+        trailer: "https://www.youtube.com/embed/73_1biulkYk"
+      },
+      {
+        titulo: "Lilo e Stitch",
+        ano: "2002",
+        genero: "Ficção Científica, Drama",
+        duracao: "1h 25m",
+        classificacao: "M/6",
+        sinopse: "Lilo é uma garota que adora cuidar de animais menos favorecidos. Lilo tem o costume de coletar lixo reciclável nas praias para, com o dinheiro recebido, comprar comida para peixes. Até que, em um belo dia, ela encontra um cachorro e decide adotá-lo. Entretanto, este cachorro na verdade é Stitch, um ser alienígena que é um dos criminosos mais perigosos da galáxia. Agora, Stitch esconde quatro de suas seis pernas e decide se fazer passar por um cachorro comum, ficando amigo de Lilo.",
+        precoAluguel: "3,49 €",
+        precoCompra: "10,99 €",
+        imagem: "https://i.etsystatic.com/18242346/r/il/87bc12/2184703308/il_570xN.2184703308_jpnu.jpg",
+        trailer: "https://www.youtube.com/watch?v=_gMCdlt3Txc"
+      },
+      {
+        titulo: "Parasitas",
+        ano: "2019",
+        genero: "Thriller, Comédia",
+        duracao: "2h 12m",
+        classificacao: "M/14",
+        sinopse: "Toda a família de Ki-taek está desempregada, vivendo em um porão sujo e apertado. Por obra do acaso, ele começa a dar aulas de inglês para uma garota de família rica. Fascinados com a vida luxuosa destas pessoas, pai, mãe e filhos bolam um plano para se infiltrar também na abastada família, um a um. No entanto, os segredos e mentiras necessários à ascensão social cobram o seu preço.",
+        precoAluguel: "8,49 €",
+        precoCompra: "14,99 €",
+        imagem: "https://i.etsystatic.com/18242346/r/il/87bc12/2184703308/il_570xN.2184703308_jpnu.jpg",
+        trailer: "https://www.youtube.com/embed/KZBvV1Vt8Wg"
+      },
+      {
+        titulo: "Transformers: Era da Extinção",
+        ano: "2014",
+        genero: "Ação/Ficção científica",
+        duracao: "2 h 45 min",
+        classificacao: "Livre",
+        sinopse: "Quando a humanidade se alia a um caçador de recompensas em busca do Optimus Prime, os Autobots procuram ajuda de um mecânico e sua família.",
+        precoAluguel: "7,49 €",
+        precoCompra: "14,99 €",
+        imagem: "https://cinemacao.com/wp-content/uploads/2014/07/transformers-age-of-extinction-30825-1920x1080-1.jpg",
+        trailer: "https://www.youtube.com/watch?v=5xH0HfJHsaY"
+      },
+      {
+        titulo: "Mufasa: O Rei Leão",
+        ano: "2023",
+        genero: "Drama, Guerra",
+        duracao: "1h 38min",
+        classificacao: "M/10",
+        sinopse: "Mufasa, um filhote perdido e sozinho, conhece um simpático leãozinho chamado Taka, o herdeiro de uma linhagem real. O encontro casual dá início a uma jornada transformadora de um grupo de desajustados em busca de seus destinos.",
+        precoAluguel: "8,29 €",
+        precoCompra: "19,49 €",
+        imagem: "https://upload.wikimedia.org/wikipedia/pt/1/1a/Mufasa_P%C3%B4ster.webp",
+        trailer: "https://www.youtube.com/watch?v=o17MF9vnabg"
+      }
+    ];
+
+    function mostrarDetalhes(id) {
+      const filme = detalhes[id - 1];
+      const pagina = document.getElementById("pagina-detalhes");
+      pagina.innerHTML = `
+        <div class="detalhes">
+          <div class="poster"><img src="${filme.imagem}" alt="${filme.titulo}"></div>
+          <div class="info">
+            <span class="voltar" onclick="voltarInicio()">← Voltar</span>
+            <h2>${filme.titulo}</h2>
+            <p><strong>Ano:</strong> ${filme.ano}</p>
+            <p><strong>Gênero:</strong> ${filme.genero}</p>
+            <p><strong>Duração:</strong> ${filme.duracao}</p>
+            <p><strong>Classificação:</strong> ${filme.classificacao}</p>
+            <p><strong>Sinopse:</strong> ${filme.sinopse}</p>
+            <div class="precos">
+              <span>💶 Aluguer: ${filme.precoAluguel}</span>
+              <span>💶 Compra: ${filme.precoCompra}</span>
+            </div>
+            <div class="botoes">
+              <button>Alugar Agora</button>
+              <button>Comprar Agora</button>
+            </div>
+            <iframe src="${filme.trailer}" title="Trailer de ${filme.titulo}" allowfullscreen></iframe>
+          </div>
+        </div>`;
+      document.getElementById("pagina-inicial").style.display = "none";
+      pagina.style.display = "block";
+    }
+
+    function voltarInicio() {
+      document.getElementById("pagina-inicial").style.display = "block";
+      document.getElementById("pagina-detalhes").style.display = "none";
+    }
+  </script>
+</body>
+</html>
